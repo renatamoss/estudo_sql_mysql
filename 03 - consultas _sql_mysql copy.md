@@ -59,7 +59,7 @@ SELECT * FROM itens_notas_fiscais WHERE codigo_do_produto = '1101035' ORDER BY Q
 
 <hr/>
 
-### Comandos SUM, MAX, COUT(*):
+### Comandos SUM, MAX, COUNT: Aplicando critério de agrupamento sobre os campos numéricos:
 
 - [X] SUM: soma o total do campo especificado no GROUP BY;
 - [X] MAX: busca o valor máximo do campo especificado no GROUP BY;
@@ -84,6 +84,7 @@ ORDER BY BAIRRO;
 <hr/>
 
 ### HAVING: é um filtro que não se aplica sobre o SELECT, mas sobre o resultado de um SELECT que é agrupado: 
+
 ~~~
 SELECT CPF, COUNT(*) FROM notas_fiscais
 WHERE YEAR(DATA_VENDA) = 2016
@@ -94,6 +95,7 @@ HAVING COUNT(*) > 2000;
 <hr/>
 
 ### CASE: condicional se acontece uma determinada condição, executa; senão, executa outra:
+
 ~~~
 SELECT NOME_DO_PRODUTO, PRECO_DE_LISTA,
 CASE
