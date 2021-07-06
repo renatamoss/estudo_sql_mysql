@@ -1,0 +1,69 @@
+## Consultas SQL: Avançando no SQL com MySQL
+
+### FUNÇÕES: 
+FUNÇÕES no SQL são rotinas definidas no banco de dados, identificadas por um nome pelo qual podem ser invocadas. 
+Dessa forma, um procedimento desses pode executar uma série de instruções, receber parâmetros e retornar valores. </br>
+
+- [x] Alguns exemplos de funções de Strings: 
+~~~
+SELECT NOME, CONCAT(ENDERECO_1, ' ', BAIRRO, ' ', CIDADE, ' ', ESTADO) AS ENDERECO_COMPLETO
+FROM tabela_de_clientes;
+~~~
+~~~
+SELECT LTRIM('    OLÁ') AS RESULTADO;
+SELECT RTRIM('OLÁ     ') AS RESULTADO;
+SELECT TRIM('    OLÁ    ') AS RESULTADO;
+SELECT UPPER('olá, tudo bem?') AS RESULTADO;
+SELECT LOWER('OLÁ, TUDO BEM?') AS RESULTADO;
+SELECT SUBSTRING('OLÁ, TUDO BEM?', 6, 4) AS RESULTADO;
+~~~
+
+- [x] Alguns exemplos de funções de Date: 
+~~~
+SELECT CURDATE();
+SELECT CURRENT_TIME();
+SELECT CURRENT_TIMESTAMP();
+
+SELECT YEAR(CURRENT_TIMESTAMP());
+SELECT MONTH(CURRENT_TIMESTAMP());
+SELECT DAY(CURRENT_TIMESTAMP());
+SELECT MONTHNAME(CURRENT_TIMESTAMP());
+
+SELECT DATEDIFF(CURRENT_TIMESTAMP(), '2008-09-08') AS RESULTADO;
+
+SELECT CURRENT_TIMESTAMP() AS DIA_HOJE, 
+DATE_SUB(CURRENT_TIMESTAMP(), INTERVAL 5 DAY) AS RESULTADO;
+~~~
+~~~
+SELECT DISTINCT DATA_VENDA,
+DAYNAME(DATA_VENDA) AS DIA, 
+MONTHNAME(DATA_VENDA) AS MES, YEAR(DATA_VENDA) AS ANO 
+FROM NOTAS_FISCAIS;
+~~~
+
+- [x] Alguns exemplos de funções de Matemáticas: 
+~~~
+SELECT (23+((25-2)/2)*45) AS RESULTADO;
+SELECT CEILING(12.33333232323) AS RESULTADO;
+SELECT ROUND(12.7777232323) AS RESULTADO;
+SELECT FLOOR(12.7777232323) AS RESULTADO;
+~~~
+~~~
+SELECT NUMERO, QUANTIDADE, PRECO, QUANTIDADE * PRECO AS FATURAMENTO
+FROM ITENS_NOTAS_FISCAIS;
+ 
+SELECT NUMERO, QUANTIDADE, PRECO, ROUND(QUANTIDADE * PRECO, 2) AS FATURAMENTO
+FROM ITENS_NOTAS_FISCAIS;
+~~~
+
+- [x] Conversão de dados:
+~~~
+SELECT CONCAT('O dia de hoje é : ',
+DATE_FORMAT(CURRENT_TIMESTAMP(),'%W, %d/%m/%Y') ) AS RESULTADO;
+~~~
+
+
+<hr/>
+
+*Anotações feitas no Curso de MySQL - Consultas SQL: Avançando no SQL com MySQL - Alura*
+
