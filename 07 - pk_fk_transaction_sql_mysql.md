@@ -18,9 +18,9 @@ Existem ferramentas chamadas de *CASE*, que já facilitam a construção desses 
 
 *->Tabelas(campos) ->Índice(primary key, foreign key) ->Esquemas ->View(consultas) ->Procedures e Funções ->Trigger(ordens);*
 
-#### Usando importação de dados de arquivos externos
+#### Usando importação de dados de arquivos externos:
 
-*-> Botão da direita do mouse sobre a tabela -> clicar Table Data Import Wizard -> Browse -> Selecionar o arquivo que será importado -> Select destination ;*
+*-> Clicar sobre a tabela -> Table Data Import Wizard -> Browse -> Selecionar o arquivo que será importado -> Select destination;*
 
 <hr>
 
@@ -57,19 +57,19 @@ REFERENCES tabela2 (CPF);
 
 ### COMMIT e ROLLBACK:
 
-* #### START TRANSACTION: uma transação será inicializada;
+#### START TRANSACTION: uma transação será inicializada:
 ~~~
 START TRANSACTION;
 UPDATE VENDEDORES SET COMISSAO = COMISSAO * 1.15;
 SELECT * FROM VENDEDORES;
 ~~~
 
-* #### COMMIT: confirma no banco de dados tudo aquilo que foi modificado depois do START TRANSACTION;
+#### COMMIT: confirma no banco de dados tudo aquilo que foi modificado depois do START TRANSACTION:
 ~~~
 COMMIT;
 ~~~
 
-* #### ROLLBACK: volta atrás e as modificações não são confirmadas no banco.
+#### ROLLBACK: volta atrás e as modificações não são confirmadas no banco:
 ~~~
 ROLLBACK;
 ~~~
